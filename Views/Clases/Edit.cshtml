@@ -1,0 +1,24 @@
+@model Clase
+
+<h1>Editar Clase</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="clase_id" />
+
+    <div class="mb-3">
+        <label asp-for="nombre_clase" class="form-label"></label>
+        <input asp-for="nombre_clase" class="form-control" />
+        <span asp-validation-for="nombre_clase" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="profesor_id" class="form-label">Profesor</label>
+        <select asp-for="profesor_id" class="form-control" asp-items="ViewBag.profesor_id">
+            <option value="">-- Seleccione un profesor --</option>
+        </select>
+        <span asp-validation-for="profesor_id" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-action="Index" class="btn btn-secondary">Regresar a la lista</a>
+</form>

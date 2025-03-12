@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<hr />
+
+<div class="row justify-content-center mt-4">
+    <div class="col-12">
+        <h3>Sistema de administración de escuela</h3>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a asp-controller="Estudiantes" asp-action="Index">Estudiantes</a>
+            </li>
+            <li class="list-group-item">
+                <a asp-controller="Profesores" asp-action="Index">Profesores</a>
+            </li>
+            <li class="list-group-item">
+                <a asp-controller="Clases" asp-action="Index">Clases</a>
+            </li>
+            <li class="list-group-item">
+                <a asp-controller="EstudianteClases" asp-action="Index">Asignación de Estudiantes a Clases</a>
+            </li>
+        </ul>
+    </div>
+</div>

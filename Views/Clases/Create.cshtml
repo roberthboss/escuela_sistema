@@ -1,0 +1,22 @@
+@model Clase
+
+<h2>Crear Clase</h2>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="nombre_clase" class="form-label"></label>
+        <input asp-for="nombre_clase" class="form-control" />
+        <span asp-validation-for="nombre_clase" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="profesor_id" class="form-label">Profesor</label>
+        <select asp-for="profesor_id" class="form-control" asp-items="ViewBag.profesor_id">
+            <option value="">-- Seleccione un profesor --</option>
+        </select>
+        <span asp-validation-for="profesor_id" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

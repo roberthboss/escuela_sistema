@@ -1,0 +1,30 @@
+@model IEnumerable<Clase>
+
+<h2>Index</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Clase</th>
+            <th>Profesor</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.nombre_clase</td>
+            <!-- Aquí en lugar de item.profesor_id mostramos el nombre completo -->
+            <td>@(item.profesor?.nombre + " " + item.profesor?.apellido)</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.clase_id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.clase_id">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.clase_id">Borrar</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a class="btn btn-success" asp-action="Create">Crear</a>

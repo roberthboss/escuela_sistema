@@ -1,0 +1,33 @@
+@model EstudianteClase
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>EstudianteClase</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="estudiante_id" class="control-label">Estudiante</label>
+                <select asp-for="estudiante_id" class ="form-control" asp-items="ViewBag.estudiante_id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="clase_id" class="control-label">Clase</label>
+                <select asp-for="clase_id" class ="form-control" asp-items="ViewBag.clase_id"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
